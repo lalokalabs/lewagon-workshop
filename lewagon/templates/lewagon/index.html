@@ -1,0 +1,7 @@
+<h1>My Site</h1>
+
+<ul>
+{% for update in updates %}
+<li>{{ update.text}} - {{update.user.username}}</li>
+{% endfor %}
+</ul>
