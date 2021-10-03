@@ -23,11 +23,14 @@ By the end of this course you should know about:-
 - How to use views to process incoming http request and return response with Django templates
 - Integrate your views with third party API - GetOTP for verifying email address and phone number
 
-## Shell
+## Bonus
+- Effective debugging and troubleshooting using interactive web debugger
+
+# Shell
 
 Django utilizes the shell for managing your site. For this click on the `?` in the lower-right corner and click "Workspace shortcuts" from there you can open a new shell pane. 
 
-## Database
+# Database
 
 By default this template utilizes the sqlite database engine. While this is fine for development it won't work with external users of your app as we don't persist changes to files when they happen outside the development environment. 
 
