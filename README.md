@@ -8,7 +8,7 @@
 
 The course will be conducted through replit.com.
 
-- Participant should create a free account on Replit prior to the course time
+- Participant should create a free account on [Replit](https://replit.com/) prior to the course time
 - Signup at https://otp.dev/ for a free trial - we will use its OTP API to validate email address and phone number
 
 # What will you learn in this course?
