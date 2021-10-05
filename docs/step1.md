@@ -40,3 +40,9 @@ class Submission(models.Model):
 ```
 poetry run python manage.py makemigrations lewagon
 ```
+
+### Step 1b - Run the migrations
+
+```
+poetry run python manage.py migrate lewagon
+```
