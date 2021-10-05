@@ -16,7 +16,7 @@ class Question(models.Model):
 
   def __str__(self):
     return self.text
-
+poetry run python manage.py makemigrations lewagon
   def __str__(self):
     return self.text
 
@@ -33,4 +33,10 @@ class Submission(models.Model):
   participant_phonenumber = models.CharField(max_length=255)
   answer = models.ManyToManyField(Choice)
 
+```
+
+### Step 1a - Create migrations
+
+```
+poetry run python manage.py makemigrations lewagon
 ```
