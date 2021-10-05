@@ -7,7 +7,7 @@ poetry run python manage.py createsuperuser
 ```
 
 
-### Step 2a - Uncomment url to admin shell
+### Step 2a - Uncomment url to admin shell in urls.py
 
 ```
 urlpatterns = [
