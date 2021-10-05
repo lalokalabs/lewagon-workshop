@@ -31,6 +31,15 @@ q1.choice_set.add(Choice.objects.create(text="Tokyo"))
 sub = Submission(survey=s1, participant_email="kamal@lalokalabs.co", participant_phonenumber="+6018712345")
 ```
 
+We can list all the questions:-
+
+```
+for question in Question.objects.all():
+    print(question.survey, question.text, question.pub_date)
+```
+
+and [some more data manipulation](https://docs.djangoproject.com/en/3.2/ref/models/querysets/) ...
+
 ## Notes
 
 Ensure `django_admin_shell` added to `INSTALLED_APPS` settings:-
