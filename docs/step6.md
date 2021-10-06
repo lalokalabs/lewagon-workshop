@@ -5,14 +5,12 @@ The whole views code should be like this:-
 ```
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from django.contrib import messages
 
 from mysite.models import Survey
 from mysite.forms import SurveyForm
 
-@csrf_exempt
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
     post_data = request.POST if request.method == "POST" else None
@@ -39,13 +37,8 @@ And the templates should looks like this:-
 {% block "content" %}
 <h1>{{ survey.title }}</h1>
 
-<ol>
-{% for question in survey.question_set.all %}
-<li> {{ question.text }}</li>
-{% endfor %}
-</ol>
-
 <form action="{% url 'show-survey' survey.id %}" method="POST">
+{% csrf_token %}
 {{ form.as_p }}
 <input type="submit" name="submit" value="Submit" />
 </form>
