@@ -2,7 +2,7 @@
 
 ```
 from django.contrib import admin
-from mysite.models import Survey, Question, Choice, Submission
+from lewagon.models import Survey, Question, Choice, Submission
 
 class QuestionInline(admin.TabularInline):
   model = Question
