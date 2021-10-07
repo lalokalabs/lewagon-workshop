@@ -9,8 +9,8 @@ from django.conf import settings
 
 import requests
 
-from mysite.models import Survey
-from mysite.forms import SurveyForm
+from lewagon.models import Survey
+from lewagon.forms import SurveyForm
 
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
@@ -30,7 +30,7 @@ def show_survey(request, id=None):
       "survey": survey,
       "form": form,
     }
-    return render(request, "mysite/survey.html", context)
+    return render(request, "lewagon/survey.html", context)
 
 
 def send_otp(submission, email, success_url, fail_url, callback_url):
