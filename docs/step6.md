@@ -8,8 +8,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
 
-from mysite.models import Survey
-from mysite.forms import SurveyForm
+from lewagon.models import Survey
+from lewagon.forms import SurveyForm
 
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
@@ -26,13 +26,13 @@ def show_survey(request, id=None):
       "survey": survey,
       "form": form,
     }
-    return render(request, "mysite/survey.html", context)
+    return render(request, "lewagon/survey.html", context)
 ```
 
 And the templates should looks like this:-
 
 ```
-{% extends "mysite/base.html" %}
+{% extends "lewagon/base.html" %}
 
 {% block "content" %}
 <h1>{{ survey.title }}</h1>
@@ -49,7 +49,7 @@ And the templates should looks like this:-
 
 ```
 from django import forms
-from mysite.models import Submission, Choice
+from lewagon.models import Submission, Choice
 
 class SurveyForm(forms.Form):
     email = forms.EmailField()
