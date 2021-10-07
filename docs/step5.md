@@ -6,8 +6,8 @@ Add this code to `views.py`:-
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
-from mysite.models import Survey
-from mysite.forms import SurveyForm
+from lewagon.models import Survey
+from lewagon.forms import SurveyForm
 
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
@@ -16,8 +16,16 @@ def show_survey(request, id=None):
       "survey": survey,
       "form": form,
     }
-    return render(request, "mysite/survey.html", context)
+    return render(request, "lewagon/survey.html", context)
 ```
+
+### Step 5a - Add route to urls.py
+
+```
+path("survey/<int:id>/", show_survey, name="show-survey"),
+```
+
+### Step 5b - Add html templates
 
 Add this code to `lewagon/templates/lewagon/survey.html`:-
 
