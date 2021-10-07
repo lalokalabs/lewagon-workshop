@@ -11,6 +11,7 @@ from lewagon.forms import SurveyForm
 
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
+    form = SurveyForm(survey)
     
     context = {
       "survey": survey,
