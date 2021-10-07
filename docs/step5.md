@@ -19,10 +19,10 @@ def show_survey(request, id=None):
     return render(request, "mysite/survey.html", context)
 ```
 
-Add this code to `mysites/templates/mysite/survey.html`:-
+Add this code to `lewagon/templates/lewagon/survey.html`:-
 
 ```
-{% extends "mysite/base.html" %}
+{% extends "lewagon/base.html" %}
 
 {% block "content" %}
 <h1>{{ survey.title }}</h1>
