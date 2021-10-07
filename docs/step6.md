@@ -73,4 +73,5 @@ class SurveyForm(forms.Form):
           submission.answer.add(choice)
       
       submission.save()
+      return submission
 ```
