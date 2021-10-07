@@ -22,6 +22,9 @@ def show_survey(request, id=None):
 ### Step 5a - Add route to urls.py
 
 ```
+from lewagon.views import show_survey
+
+```
 path("survey/<int:id>/", show_survey, name="show-survey"),
 ```
 
