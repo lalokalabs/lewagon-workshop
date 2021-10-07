@@ -2,7 +2,7 @@
 
 ```
 from django import forms
-from mysite.models import Submission, Choice
+from lewagon.models import Submission, Choice
 
 class SurveyForm(forms.Form):
     email = forms.EmailField()
@@ -21,8 +21,8 @@ class SurveyForm(forms.Form):
 ### Step 4a - Test forms in web console
 
 ```
-from mysite.forms import SurveyForm
-from mysite.models import Survey
+from lewagon.forms import SurveyForm
+from lewagon.models import Survey
 
 survey = Survey.objects.all()[0]
 data = {
