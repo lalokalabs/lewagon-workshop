@@ -23,6 +23,7 @@ def show_survey(request, id=None):
 
 ```
 from lewagon.views import show_survey
+```
 
 ```
 path("survey/<int:id>/", show_survey, name="show-survey"),
