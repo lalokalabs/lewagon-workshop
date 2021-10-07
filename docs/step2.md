@@ -28,7 +28,7 @@ survey1 = Survey.objects.create(title="Survey 1")
 q1 = Question.objects.create(survey=survey1, text="What is capital of Japan?", pub_date=timezone.now())
 q1.choice_set.add(Choice.objects.create(text="Tokyo"))
 
-sub = Submission(survey=survey1, participant_email="kamal@lalokalabs.co", participant_phonenumber="+6018712345")
+sub = Submission(survey=s1, participant_email="kamal@lalokalabs.co", participant_phonenumber="+6018712345")
 ```
 
 We can list all the questions:-
