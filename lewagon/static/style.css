@@ -74,7 +74,7 @@ a {
   color: #0069ed;
 }
 /* Buttons styles start */
-button {
+button, input[type=submit] {
   display: inline-block;
   border: none;
   padding: .75rem 1.25rem;
@@ -92,23 +92,25 @@ button {
   -moz-appearance: none;
   border-radius: .25rem;
 }
-button:hover,button:focus {
+button:hover, button:focus, input[type=submit]:hover, input[type=submit]:focus {
   background: #0053ba;
 }
-button:focus {
+button:focus, input[type=submit]:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
-button:active {
+button:active, input[type=submit]:active {
   transform: scale(0.99);
 }
 /* Button styles end */
 input {
-  padding: .75rem;
+  padding: .5rem;
   border-radius: .25rem;
   border: 1px solid #a3a3a3;
   font-size: .9rem;
-  min-width: 220px;
+}
+form .label {
+  display: block;
 }
 footer {
   flex-shrink: 0;
