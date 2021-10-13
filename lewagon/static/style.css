@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5rem;
+  color: #5a6775;
+  background-color: #edf2f8;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.d-flex {
+  display: flex;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.logo {
+  max-width: 200px;
+}
+header {
+  background: white;
+  padding: 10px 0;
+}
+header h2 {
+  display: inline-block;
+  font-size: .9rem;
+  margin-left: auto;
+  font-weight: 600;
+  padding-top: 3px;
+  color: #5c8cd5;
+}
+main {
+  padding: 40px 0;
+  flex: 1 0 auto;
+}
+.messages {
+  border-radius: .25rem;
+  padding: 15px 40px;
+  margin-top: -15px;
+}
+.messages.success {
+  background-color: #b9fbd1;
+  color: #31896c;
+  border: 1px solid #62c585;
+}
+.messages.info {
+  background-color: #c0e4ff;
+  color: #526dad;
+  border: 1px solid #7cb3dd;
+}
+.messages.warning {
+  background-color: #fffbc9;
+  color: #d9861d;
+  border: 1px solid #ffdaad;
+}
+.messages.error {
+  background-color: #ffc9c9;
+  color: #971111;
+  border: 1px solid #ff8a8a;
+}
+main h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+.-ml-1 {
+  margin-left: -1rem;
+}
+a {
+  color: #0069ed;
+}
+/* Buttons styles start */
+button {
+  display: inline-block;
+  border: none;
+  padding: .75rem 1.25rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: .25rem;
+}
+button:hover,button:focus {
+  background: #0053ba;
+}
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+button:active {
+  transform: scale(0.99);
+}
+/* Button styles end */
+input {
+  padding: .75rem;
+  border-radius: .25rem;
+  border: 1px solid #a3a3a3;
+  font-size: .9rem;
+  min-width: 220px;
+}
+footer {
+  flex-shrink: 0;
+  font-size: .9rem;
+  background: #838991;
+  padding: 25px 0;
+  color: white;
+}

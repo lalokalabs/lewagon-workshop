@@ -1,7 +1,9 @@
-<h1>My Site</h1>
-
-<ul>
+{% extends 'lewagon/base.html' %}
+{% block content %}
+<h1>Page Title</h1>
+<ul class="ml-1">
 {% for update in updates %}
-<li>{{ update.text}} - {{update.user.username}}</li>
+<li>{{ update.text}} - {{ update.user.username }}</li>
 {% endfor %}
 </ul>
+{% endblock%}
