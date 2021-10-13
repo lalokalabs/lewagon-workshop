@@ -9,6 +9,9 @@ from django.shortcuts import render
 from lewagon.models import Survey
 from lewagon.forms import SurveyForm
 
+def index(request):
+    return render(request, "lewagon/index.html")
+
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
     form = SurveyForm(survey)
