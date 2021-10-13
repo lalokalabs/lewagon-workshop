@@ -30,7 +30,6 @@ class Choice(models.Model):
 class Submission(models.Model):
   survey = models.ForeignKey(Survey, on_delete=models.PROTECT)
   participant_email = models.EmailField(max_length=255)
-  participant_phonenumber = models.CharField(max_length=255)
   answer = models.ManyToManyField(Choice)
 
 ```
