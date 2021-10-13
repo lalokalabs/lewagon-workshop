@@ -16,7 +16,7 @@ class Question(models.Model):
 
   def __str__(self):
     return self.text
-poetry run python manage.py makemigrations lewagon
+
   def __str__(self):
     return self.text
 
