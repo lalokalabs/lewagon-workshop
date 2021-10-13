@@ -1,17 +1,46 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <title>Title of the document</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-{% block "messages" %}
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endblock %}
-{% block "content" %}
-{% endblock %}
+  <header>
+    <div class="container">
+      <div class="d-flex">
+        <img class="logo" src="labs-logo-h-t.png" alt="LaLoka Labs">
+        <h2>Workshop Title</h2>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {% block messages %}
+      {% if messages %}
+      <ul class="messages {% if message.tags %}{{ message.tags }}{% endif %}">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endblock %}
+
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Footer
+    </div>
+  </footer>
 </body>
 </html>
