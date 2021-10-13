@@ -19,10 +19,11 @@ def show_survey(request, id=None):
 
     url = reverse("show-survey", args=(id,))
     otp_redirect_url = request.build_absolute_uri(url)
+    otp_callback_url = request.build_absolute_uri(reverse("otp-callback"))
     if form.is_bound and form.is_valid():
         data = form.cleaned_data
         submission = form.save()
-        url = send_otp(submission, data["email"], otp_redirect_url, otp_redirect_url, otp_redirect_url)
+        url = send_otp(submission, data["email"], otp_redirect_url, otp_redirect_url, otp_callback_url)
         messages.add_message(request, messages.INFO, 'Submissions saved.')
         return redirect(url)
     
@@ -49,9 +50,27 @@ def send_otp(submission, email, success_url, fail_url, callback_url):
     data = resp.json()
     redirect_url = data["link"]
     return redirect_url
+    
+@csrf_exempt
+def otp_callback(request):
+    data = json.loads(request.body)
+    submission_id = int(data["metadata"])
+    email = data["email"]
+    auth_status = data["auth_status"]
+
+    submission = get_object_or_404(Submission, pk=submission_id, participant_email=email)
+    submission.status = auth_status
+    submission.save()
+    return HttpResponse("OK")
+```
+
+### Step 7a - Add url route to urls.py
+
+```
+path("survey/otp/callback/xtygyita/", otp_callback, name="otp-callback"),
 ```
     
-### Step 7a - Add GETOTP API Key and Auth token to settings.py
+### Step 7b - Add GETOTP API Key and Auth token to settings.py
     
  ```
 GETOTP_API_SID = os.environ.get('GETOTP_API_SID', None)
