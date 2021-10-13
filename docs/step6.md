@@ -53,7 +53,6 @@ from lewagon.models import Submission, Choice
 
 class SurveyForm(forms.Form):
     email = forms.EmailField()
-    phonenumber = forms.CharField()
     question_1 = forms.ChoiceField(widget=forms.RadioSelect, choices=())
 
     def __init__(self, survey, *args, **kwargs):
@@ -66,7 +65,7 @@ class SurveyForm(forms.Form):
 
     def save(self):
       data = self.cleaned_data
-      submission = Submission(survey=self.survey, participant_email=data["email"], participant_phonenumber=data["phonenumber"])
+      submission = Submission(survey=self.survey, participant_email=data["email"])
       submission.save()
       for question in self.survey.question_set.all():
           choice = Choice.objects.get(pk=data[f"question_{question.id}"])

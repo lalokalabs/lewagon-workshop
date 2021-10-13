@@ -6,7 +6,6 @@ from lewagon.models import Submission, Choice
 
 class SurveyForm(forms.Form):
     email = forms.EmailField()
-    phonenumber = forms.CharField()
     question_1 = forms.ChoiceField(widget=forms.RadioSelect, choices=())
 
     def __init__(self, survey, *args, **kwargs):
@@ -27,7 +26,6 @@ from lewagon.models import Survey
 survey = Survey.objects.all()[0]
 data = {
     "email": "kamal@lalokalabs.co",
-    "phonenumber": "+81919191919",
     "question_1": "1",
     "question_2": "4",
 }
