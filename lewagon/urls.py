@@ -22,7 +22,7 @@ import lewagon.views
 from django.shortcuts import render
 
 urlpatterns = [
-    #path("", lewagon.views.index),
+    path("", lewagon.views.index),
     path('admin/', admin.site.urls),   
 ]
 
