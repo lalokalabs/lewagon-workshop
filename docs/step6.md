@@ -11,6 +11,9 @@ from django.contrib import messages
 from lewagon.models import Survey
 from lewagon.forms import SurveyForm
 
+def index(request):
+    return render(request, "lewagon/index.html")
+
 def show_survey(request, id=None):
     survey = get_object_or_404(Survey, pk=id)
     post_data = request.POST if request.method == "POST" else None
