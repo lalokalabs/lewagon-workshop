@@ -21,9 +21,12 @@ class QuestionAdmin(admin.ModelAdmin):
   inlines = [
     ChoiceInline
   ]
+  
+class SubmissionAdmin(admin.ModelAdmin):
+  list_display = ('participant_email', 'status')
 
 admin.site.register(Survey, SurveyAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
-admin.site.register(Submission)
+admin.site.register(Submission, SubmissionAdmin)
 ```
