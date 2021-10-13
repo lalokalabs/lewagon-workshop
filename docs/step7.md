@@ -11,7 +11,7 @@ from django.conf import settings
 
 import requests
 
-from lewagon.models import Survey
+from lewagon.models import Survey, Submission
 from lewagon.forms import SurveyForm
 
 def index(request):
